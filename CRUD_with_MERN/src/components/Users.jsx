@@ -7,13 +7,13 @@ const Users = () => {
   const { id } = useParams();
   useEffect(() => {
     axios
-      .get("http://localhost:5555")
+      .get("https://crudapi-two.vercel.app")
       .then((result) => setUsers(result.data))
       .catch((error) => console.log(error));
   }, []);
   const deleteHandler = (id) => {
     axios
-      .delete("http://localhost:5555/deleteUser/" + id)
+      .delete("https://crudapi-two.vercel.app/deleteUser/" + id)
       .then((result) => {
         setUsers(result.data);
         window.location.reload();
