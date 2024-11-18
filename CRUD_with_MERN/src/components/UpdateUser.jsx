@@ -10,7 +10,7 @@ const UpdateUser = () => {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:5555/getUser/" + id)
+      .get("https://crudapi-two.vercel.app/getUser/" + id)
       .then((result) => {
         setName(result.data.name);
         setAge(result.data.age);
@@ -21,7 +21,7 @@ const UpdateUser = () => {
   const updateHandler = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:5555/updateUser/" + id, { name, email, age })
+      .put("https://crudapi-two.vercel.app/updateUser/" + id, { name, email, age })
       .then((result) => {
         // console.log(result);
         navigate("/");
