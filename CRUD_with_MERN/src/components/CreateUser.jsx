@@ -11,7 +11,7 @@ const CreateUser = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5555/createUser", { name, email, age })
+      .post("https://crudapi-two.vercel.app/createUser", { name, email, age })
       .then((result) => {
         // console.log(result);
         navigate("/");
