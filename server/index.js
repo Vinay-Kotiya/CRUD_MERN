@@ -6,7 +6,13 @@ const UserModel = require("./models/Users");
 const PORT = process.env.PORT || 5000;
 const connectDB = require("./db/connect");
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://crudinmern.vercel.app"],
+    methods: ["POST", "GET", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 const start = async () => {
